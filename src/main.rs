@@ -1,3 +1,5 @@
+use std::fs;
+
 // #[derive(Default)]
 struct Chip8Registry {
     vx: [u8; 0x10],     // general purpose registries (VF is a flag, do not use it)
@@ -24,6 +26,10 @@ impl Chip8Registry {
 }
 
 fn main() {
-    let emu: Chip8Registry = Chip8Registry::new();
-    println!("{:?} {} {} {} {} {} {:?}", emu.vx, emu.i, emu.pc, emu.sp, emu.dt, emu.st, emu.stack);
+    let msg: String = String::from("Chip 8 Emulator!");
+    let contents = fs::read("Airplane.ch8").expect("Should have been able to read the file");
+    println!("{}\n{:#04x?}", msg, contents);
+
+    // let emu: Chip8Registry = Chip8Registry::new();
+    // println!("{:?} {} {} {} {} {} {:?}", emu.vx, emu.i, emu.pc, emu.sp, emu.dt, emu.st, emu.stack);
 }
