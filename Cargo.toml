@@ -1,6 +1,9 @@
 [package]
 name = "chip8_emu"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 
 [dependencies]
+cargo-modules = "0.24.3"
+colored = "3.0.0"
+winit = "0.30.11"
